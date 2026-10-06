@@ -1,0 +1,466 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wasmou for WooCommerce 1.0.0\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Sell Wasmou gift cards, game top-ups and AI subscriptions in your own WooCommerce store. Import products in one click, keep prices and stock in sync, and deliver codes automatically."
+msgstr "Vendez des cartes cadeaux, recharges de jeux et abonnements IA Wasmou dans votre propre boutique WooCommerce. Importez les produits en un clic, gardez prix et stock synchronisés et livrez les codes automatiquement."
+
+msgid "Settings"
+msgstr "Réglages"
+
+msgid "Testing…"
+msgstr "Test en cours…"
+
+msgid "Loading the catalog…"
+msgstr "Chargement du catalogue…"
+
+msgid "Importing…"
+msgstr "Importation…"
+
+msgid "Done"
+msgstr "Terminé"
+
+msgid "selected"
+msgstr "sélectionné(s)"
+
+msgid "Imported"
+msgstr "Importé"
+
+msgid "New"
+msgstr "Nouveau"
+
+msgid "from"
+msgstr "à partir de"
+
+msgid "plans"
+msgstr "formules"
+
+msgid "plan"
+msgstr "formule"
+
+msgid "All categories"
+msgstr "Toutes les catégories"
+
+msgid "Something went wrong"
+msgstr "Une erreur s’est produite"
+
+msgid "Syncing…"
+msgstr "Synchronisation…"
+
+msgid "No product matches."
+msgstr "Aucun produit ne correspond."
+
+msgid "add your API key to start selling."
+msgstr "ajoutez votre clé API pour commencer à vendre."
+
+msgid "Open settings"
+msgstr "Ouvrir les réglages"
+
+msgid "Connection"
+msgstr "Connexion"
+
+msgid "Pricing"
+msgstr "Tarification"
+
+msgid "Import products"
+msgstr "Importer des produits"
+
+msgid "Delivery"
+msgstr "Livraison"
+
+msgid "Status"
+msgstr "État"
+
+msgid "You are not allowed to do this."
+msgstr "Vous n’avez pas l’autorisation d’effectuer cette action."
+
+msgid "Settings saved."
+msgstr "Réglages enregistrés."
+
+msgid "Connect your store to Wasmou. Your customers pay you; we deliver the codes and subscriptions automatically from your Wasmou wallet."
+msgstr "Connectez votre boutique à Wasmou. Vos clients vous paient ; nous livrons les codes et abonnements automatiquement depuis votre portefeuille Wasmou."
+
+msgid "API key"
+msgstr "Clé API"
+
+msgid "Paste your key"
+msgstr "Collez votre clé"
+
+msgid "Find it in your Wasmou account: menu > API access. Leave the masked value to keep the saved key."
+msgstr "Trouvez-la dans votre compte Wasmou : menu > Accès API. Laissez la valeur masquée pour conserver la clé enregistrée."
+
+msgid "API address"
+msgstr "Adresse de l’API"
+
+msgid "Only change this if Wasmou tells you to."
+msgstr "Ne modifiez ceci que si Wasmou vous le demande."
+
+msgid "Language of guides"
+msgstr "Langue des guides"
+
+msgid "Same as the site"
+msgstr "Identique au site"
+
+msgid "Language of activation guides and descriptions shown on your products."
+msgstr "Langue des guides d’activation et des descriptions affichés sur vos produits."
+
+msgid "Save"
+msgstr "Enregistrer"
+
+msgid "Test connection"
+msgstr "Tester la connexion"
+
+msgid "Good to know"
+msgstr "Bon à savoir"
+
+msgid "If you restricted your key to IP addresses in Wasmou, allow your hosting server IP, or leave the list empty."
+msgstr "Si vous avez limité votre clé à des adresses IP dans Wasmou, autorisez l’IP de votre serveur d’hébergement ou laissez la liste vide."
+
+msgid "Keep money in your Wasmou wallet: orders are bought from it when your customer pays."
+msgstr "Gardez de l’argent dans votre portefeuille Wasmou : les commandes y sont prélevées lorsque votre client paie."
+
+msgid "Wasmou prices are in Algerian dinar (DZD). Choose how they become your shop prices."
+msgstr "Les prix Wasmou sont en dinar algérien (DZD). Choisissez comment ils deviennent les prix de votre boutique."
+
+msgid "Your margin"
+msgstr "Votre marge"
+
+msgid "Percent (%) on top of cost"
+msgstr "Pourcentage (%) ajouté au coût"
+
+msgid "Fixed amount added to cost"
+msgstr "Montant fixe ajouté au coût"
+
+msgid "A fixed amount is in your store currency."
+msgstr "Un montant fixe est exprimé dans la devise de votre boutique."
+
+msgid "Currency"
+msgstr "Devise"
+
+msgid "same as Wasmou, no conversion."
+msgstr "identique à Wasmou, sans conversion."
+
+msgid "Exchange rate (DZD per 1 %s)"
+msgstr "Taux de change (DZD pour 1 %s)"
+
+msgid "Example: if 1 USD = 250 DZD, enter 250. Prices are recalculated at every sync."
+msgstr "Exemple : si 1 USD = 250 DZD, saisissez 250. Les prix sont recalculés à chaque synchronisation."
+
+msgid "Rounding"
+msgstr "Arrondi"
+
+msgid "None (store decimals)"
+msgstr "Aucun (décimales de la boutique)"
+
+msgid "Up to a whole number"
+msgstr "Au nombre entier supérieur"
+
+msgid "End in .99"
+msgstr "Terminer par ,99"
+
+msgid "Up to a multiple of 5"
+msgstr "Au multiple de 5 supérieur"
+
+msgid "Up to a multiple of 10"
+msgstr "Au multiple de 10 supérieur"
+
+msgid "Example: a product that costs 1,000 DZD will sell for"
+msgstr "Exemple : un produit qui coûte 1 000 DZD sera vendu"
+
+msgid "Pick what you want to sell. Products come with images, prices, warranty and activation guides. You can edit them afterwards: re-syncing only refreshes prices and stock."
+msgstr "Choisissez ce que vous voulez vendre. Les produits arrivent avec images, prix, garantie et guides d’activation. Vous pouvez les modifier ensuite : la resynchronisation ne met à jour que les prix et le stock."
+
+msgid "Add your API key first."
+msgstr "Ajoutez d’abord votre clé API."
+
+msgid "Search products…"
+msgstr "Rechercher des produits…"
+
+msgid "Hide imported"
+msgstr "Masquer les produits importés"
+
+msgid "Select all shown"
+msgstr "Sélectionner tout ce qui est affiché"
+
+msgid "Import selected"
+msgstr "Importer la sélection"
+
+msgid "After delivery"
+msgstr "Après la livraison"
+
+msgid "Mark the order as Completed (the customer gets the codes by e-mail)"
+msgstr "Passer la commande à Terminée (le client reçoit les codes par e-mail)"
+
+msgid "If Wasmou cannot deliver"
+msgstr "Si Wasmou ne peut pas livrer"
+
+msgid "Put the order On hold and e-mail me"
+msgstr "Mettre la commande en attente et m’envoyer un e-mail"
+
+msgid "Refund the failed items automatically"
+msgstr "Rembourser automatiquement les articles en échec"
+
+msgid "Automatic refunds use your payment gateway when it supports refunds."
+msgstr "Les remboursements automatiques passent par votre passerelle de paiement lorsqu’elle les prend en charge."
+
+msgid "Activation guide"
+msgstr "Guide d’activation"
+
+msgid "Show the \"How to activate\" tab on product pages"
+msgstr "Afficher l’onglet « Comment activer » sur les pages produit"
+
+msgid "Product images"
+msgstr "Images des produits"
+
+msgid "Download product images when importing"
+msgstr "Télécharger les images des produits lors de l’importation"
+
+msgid "Sync every"
+msgstr "Synchroniser toutes les"
+
+msgid "minutes"
+msgstr "minutes"
+
+msgid "How often prices and stock are refreshed."
+msgstr "Fréquence de mise à jour des prix et du stock."
+
+msgid "Alert me when my Wasmou balance is below"
+msgstr "M’alerter lorsque mon solde Wasmou est inférieur à"
+
+msgid "Alerts go to"
+msgstr "Les alertes sont envoyées à"
+
+msgid "Wasmou balance"
+msgstr "Solde Wasmou"
+
+msgid "Imported products"
+msgstr "Produits importés"
+
+msgid "Orders being delivered"
+msgstr "Commandes en cours de livraison"
+
+msgid "Last sync"
+msgstr "Dernière synchronisation"
+
+msgid "ago"
+msgstr "il y a"
+
+msgid "never"
+msgstr "jamais"
+
+msgid "Store currency"
+msgstr "Devise de la boutique"
+
+msgid "WP-Cron"
+msgstr "WP-Cron"
+
+msgid "Disabled: set up a real cron job calling wp-cron.php every minute"
+msgstr "Désactivé : configurez une vraie tâche cron appelant wp-cron.php chaque minute"
+
+msgid "Active"
+msgstr "Actif"
+
+msgid "Sync prices and stock now"
+msgstr "Synchroniser les prix et le stock maintenant"
+
+msgid "View logs"
+msgstr "Voir les journaux"
+
+msgid "Connected. Your Wasmou balance: %s DZD"
+msgstr "Connecté. Votre solde Wasmou : %s DZD"
+
+msgid "The catalog is empty."
+msgstr "Le catalogue est vide."
+
+msgid "Synced: %1$d products updated, %2$d marked out of stock."
+msgstr "Synchronisé : %1$d produits mis à jour, %2$d marqués en rupture de stock."
+
+msgid "No Wasmou products in this order."
+msgstr "Aucun produit Wasmou dans cette commande."
+
+msgid "Check status"
+msgstr "Vérifier l’état"
+
+msgid "Retry failed items"
+msgstr "Réessayer les articles en échec"
+
+msgid "Your Wasmou wallet"
+msgstr "Votre portefeuille Wasmou"
+
+msgid "Add funds"
+msgstr "Ajouter des fonds"
+
+msgid "Add your Wasmou API key in WooCommerce > Wasmou first."
+msgstr "Ajoutez d’abord votre clé API Wasmou dans WooCommerce > Wasmou."
+
+msgid "Wasmou is busy (rate limit). Try again in a minute."
+msgstr "Wasmou est occupé (limite de requêtes). Réessayez dans une minute."
+
+msgid "Your Wasmou API key was rejected. Check the key and, if you restricted it to IP addresses, allow this server."
+msgstr "Votre clé API Wasmou a été refusée. Vérifiez la clé et, si vous l’avez limitée à des adresses IP, autorisez ce serveur."
+
+msgid "Wasmou: purchased \"%1$s\" (Wasmou order %2$s)."
+msgstr "Wasmou : « %1$s » acheté (commande Wasmou %2$s)."
+
+msgid "Wasmou: could not buy \"%1$s\": %2$s"
+msgstr "Wasmou : impossible d’acheter « %1$s » : %2$s"
+
+msgid "Wasmou could not be reached for an order"
+msgstr "Wasmou est injoignable pour une commande"
+
+msgid "Order #%d could not be sent to Wasmou after several tries. Check the order in Wasmou before refunding: the purchase may have gone through."
+msgstr "La commande n°%d n’a pas pu être envoyée à Wasmou après plusieurs essais. Vérifiez la commande dans Wasmou avant de rembourser : l’achat a peut-être été effectué."
+
+msgid "A Wasmou order is taking very long"
+msgstr "Une commande Wasmou prend beaucoup de temps"
+
+msgid "Order #%d is still waiting for Wasmou. Please check it in your Wasmou account."
+msgstr "La commande n°%d attend toujours Wasmou. Veuillez la vérifier dans votre compte Wasmou."
+
+msgid "Wasmou: everything was delivered."
+msgstr "Wasmou : tout a été livré."
+
+msgid "Wasmou delivered all codes."
+msgstr "Wasmou a livré tous les codes."
+
+msgid "Wasmou: part of this order could not be delivered:"
+msgstr "Wasmou : une partie de cette commande n’a pas pu être livrée :"
+
+msgid "Wasmou could not fulfil this order: needs your attention."
+msgstr "Wasmou n’a pas pu exécuter cette commande : elle requiert votre attention."
+
+msgid "Order #%d could not be fulfilled by Wasmou"
+msgstr "La commande n°%d n’a pas pu être exécutée par Wasmou"
+
+msgid "Wasmou could not deliver this product."
+msgstr "Wasmou n’a pas pu livrer ce produit."
+
+msgid "Wasmou: failed items were refunded automatically."
+msgstr "Wasmou : les articles en échec ont été remboursés automatiquement."
+
+msgid "Wasmou: automatic refund failed, please refund manually:"
+msgstr "Wasmou : le remboursement automatique a échoué, veuillez rembourser manuellement :"
+
+msgid "Delivered"
+msgstr "Livré"
+
+msgid "Delivery problem: we are looking into it"
+msgstr "Problème de livraison : nous nous en occupons"
+
+msgid "Being prepared. This page updates by itself."
+msgstr "En préparation. Cette page se met à jour automatiquement."
+
+msgid "Your delivery"
+msgstr "Votre livraison"
+
+msgid "Copy"
+msgstr "Copier"
+
+msgid "How to activate"
+msgstr "Comment activer"
+
+msgid "Your subscription was added to your account. Check your e-mail and follow the steps below."
+msgstr "Votre abonnement a été ajouté à votre compte. Consultez votre e-mail et suivez les étapes ci-dessous."
+
+msgid "Your order from %s is ready"
+msgstr "Votre commande chez %s est prête"
+
+msgid "Good news, your order has been delivered:"
+msgstr "Bonne nouvelle, votre commande a été livrée :"
+
+msgid "Plan"
+msgstr "Formule"
+
+msgid "Wasmou for WooCommerce needs WooCommerce to be installed and active."
+msgstr "Wasmou for WooCommerce nécessite que WooCommerce soit installé et activé."
+
+msgid "Every 5 minutes (Wasmou)"
+msgstr "Toutes les 5 minutes (Wasmou)"
+
+msgid "Wasmou catalog sync"
+msgstr "Synchronisation du catalogue Wasmou"
+
+msgid "No API key"
+msgstr "Aucune clé API"
+
+msgid "Your Wasmou balance is low"
+msgstr "Votre solde Wasmou est bas"
+
+msgid "Your Wasmou balance is %s DZD. Add funds so your customers keep getting instant delivery: https://myapp.wasmou.net/deposit"
+msgstr "Votre solde Wasmou est de %s DZD. Ajoutez des fonds pour que vos clients continuent de recevoir leurs commandes instantanément : https://myapp.wasmou.net/deposit"
+
+msgid "Full warranty"
+msgstr "Garantie complète"
+
+msgid "No warranty"
+msgstr "Sans garantie"
+
+msgid "24-hour warranty"
+msgstr "Garantie 24 heures"
+
+msgid "%d-day warranty"
+msgid_plural "%d-day warranty"
+msgstr[0] "Garantie %d jour"
+msgstr[1] "Garantie %d jours"
+
+msgid "%d-month warranty"
+msgstr "Garantie %d mois"
+
+msgid "1-year warranty"
+msgstr "Garantie 1 an"
+
+msgid "%s-year warranty"
+msgstr "Garantie %s ans"
+
+msgid "Added to your account, usually the same day"
+msgstr "Ajouté à votre compte, généralement le jour même"
+
+msgid "Instant delivery after payment"
+msgstr "Livraison instantanée après paiement"
+
+msgid "required"
+msgstr "obligatoire"
+
+msgid "What you get"
+msgstr "Ce que vous recevez"
+
+msgid "Warranty & notes"
+msgstr "Garantie et remarques"
+
+msgid "%s is required."
+msgstr "%s est obligatoire."
+
+msgid "%s must be a valid e-mail address."
+msgstr "%s doit être une adresse e-mail valide."
+
+msgid "This subscription is added to one account: order one at a time."
+msgstr "Cet abonnement est ajouté à un seul compte : commandez-en un à la fois."
+
+msgid "Details"
+msgstr "Détails"
+
+msgid "\"%s\" is temporarily unavailable. Please remove it from your cart or try again later."
+msgstr "« %s » est temporairement indisponible. Retirez-le de votre panier ou réessayez plus tard."
+
+msgid "Not enough stock for \"%s\". Please lower the quantity."
+msgstr "Stock insuffisant pour « %s ». Veuillez réduire la quantité."
+
+msgid "Details are missing for \"%s\". Remove it and add it again from its product page."
+msgstr "Des informations manquent pour « %s ». Retirez-le puis ajoutez-le à nouveau depuis sa page produit."
+
+msgid "The price of \"%s\" changed. Please review your cart and try again."
+msgstr "Le prix de « %s » a changé. Vérifiez votre panier et réessayez."
+
+msgid "These products cannot be delivered right now. Please try again later."
+msgstr "Ces produits ne peuvent pas être livrés pour le moment. Veuillez réessayer plus tard."
+
+msgid "Wasmou wallet too low for a customer order"
+msgstr "Portefeuille Wasmou insuffisant pour une commande client"
+
+msgid "A customer tried to buy but your Wasmou wallet cannot cover it. Add funds at myapp.wasmou.net."
+msgstr "Un client a essayé d’acheter mais votre portefeuille Wasmou ne peut pas couvrir la commande. Ajoutez des fonds sur myapp.wasmou.net."

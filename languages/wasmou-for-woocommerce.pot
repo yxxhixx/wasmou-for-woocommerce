@@ -1,0 +1,700 @@
+# Copyright (C) 2026 Wasmou
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wasmou for WooCommerce 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wasmou-for-woocommerce\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-06T03:19:36+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: wasmou-for-woocommerce\n"
+
+#. Plugin Name of the plugin
+#: wasmou-for-woocommerce.php
+msgid "Wasmou for WooCommerce"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: wasmou-for-woocommerce.php
+msgid "https://gateway.wasmou.net"
+msgstr ""
+
+#. Description of the plugin
+#: wasmou-for-woocommerce.php
+msgid "Sell Wasmou gift cards, game top-ups and AI subscriptions in your own WooCommerce store. Import products in one click, keep prices and stock in sync, and deliver codes automatically."
+msgstr ""
+
+#. Author of the plugin
+#: wasmou-for-woocommerce.php
+#: includes/class-wasmou-admin.php:30
+msgid "Wasmou"
+msgstr ""
+
+#. Author URI of the plugin
+#: wasmou-for-woocommerce.php
+msgid "https://myapp.wasmou.net"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:24
+msgid "Settings"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:46
+msgid "Testing…"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:47
+msgid "Loading the catalog…"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:48
+msgid "Importing…"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:49
+msgid "Done"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:50
+msgid "selected"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:51
+msgid "Imported"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:52
+msgid "New"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:53
+msgid "from"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:54
+msgid "plans"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:55
+msgid "plan"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:56
+msgid "All categories"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:57
+msgid "Something went wrong"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:58
+msgid "Syncing…"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:59
+msgid "No product matches."
+msgstr ""
+
+#: includes/class-wasmou-admin.php:68
+msgid "add your API key to start selling."
+msgstr ""
+
+#: includes/class-wasmou-admin.php:68
+msgid "Open settings"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:74
+msgid "Connection"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:75
+msgid "Pricing"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:76
+msgid "Import products"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:77
+msgid "Delivery"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:78
+#: includes/class-wasmou-admin.php:375
+msgid "Status"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:86
+#: includes/class-wasmou-admin.php:218
+#: includes/class-wasmou-admin.php:248
+#: includes/class-wasmou-admin.php:345
+msgid "You are not allowed to do this."
+msgstr ""
+
+#: includes/class-wasmou-admin.php:92
+msgid "Settings saved."
+msgstr ""
+
+#: includes/class-wasmou-admin.php:124
+msgid "Connect your store to Wasmou. Your customers pay you; we deliver the codes and subscriptions automatically from your Wasmou wallet."
+msgstr ""
+
+#: includes/class-wasmou-admin.php:127
+msgid "API key"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:127
+msgid "Paste your key"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:127
+msgid "Find it in your Wasmou account: menu > API access. Leave the masked value to keep the saved key."
+msgstr ""
+
+#: includes/class-wasmou-admin.php:128
+msgid "API address"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:128
+msgid "Only change this if Wasmou tells you to."
+msgstr ""
+
+#: includes/class-wasmou-admin.php:129
+msgid "Language of guides"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:129
+msgid "Same as the site"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:129
+msgid "Language of activation guides and descriptions shown on your products."
+msgstr ""
+
+#: includes/class-wasmou-admin.php:130
+#: includes/class-wasmou-admin.php:150
+#: includes/class-wasmou-admin.php:189
+msgid "Save"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:130
+msgid "Test connection"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:131
+msgid "Good to know"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:131
+msgid "If you restricted your key to IP addresses in Wasmou, allow your hosting server IP, or leave the list empty."
+msgstr ""
+
+#: includes/class-wasmou-admin.php:131
+msgid "Keep money in your Wasmou wallet: orders are bought from it when your customer pays."
+msgstr ""
+
+#: includes/class-wasmou-admin.php:137
+msgid "Wasmou prices are in Algerian dinar (DZD). Choose how they become your shop prices."
+msgstr ""
+
+#: includes/class-wasmou-admin.php:140
+msgid "Your margin"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:140
+msgid "Percent (%) on top of cost"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:140
+msgid "Fixed amount added to cost"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:140
+msgid "A fixed amount is in your store currency."
+msgstr ""
+
+#: includes/class-wasmou-admin.php:142
+msgid "Currency"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:142
+msgid "same as Wasmou, no conversion."
+msgstr ""
+
+#. translators: %s: currency code
+#: includes/class-wasmou-admin.php:144
+#, php-format
+msgid "Exchange rate (DZD per 1 %s)"
+msgstr ""
+
+#. translators: %s: currency code
+#: includes/class-wasmou-admin.php:144
+msgid "Example: if 1 USD = 250 DZD, enter 250. Prices are recalculated at every sync."
+msgstr ""
+
+#: includes/class-wasmou-admin.php:146
+msgid "Rounding"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:146
+msgid "None (store decimals)"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:146
+msgid "Up to a whole number"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:146
+msgid "End in .99"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:146
+msgid "Up to a multiple of 5"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:146
+msgid "Up to a multiple of 10"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:149
+msgid "Example: a product that costs 1,000 DZD will sell for"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:154
+msgid "Pick what you want to sell. Products come with images, prices, warranty and activation guides. You can edit them afterwards: re-syncing only refreshes prices and stock."
+msgstr ""
+
+#: includes/class-wasmou-admin.php:156
+msgid "Add your API key first."
+msgstr ""
+
+#: includes/class-wasmou-admin.php:163
+msgid "Search products…"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:165
+msgid "Hide imported"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:168
+msgid "Select all shown"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:169
+msgid "Import selected"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:182
+msgid "After delivery"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:182
+msgid "Mark the order as Completed (the customer gets the codes by e-mail)"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:183
+msgid "If Wasmou cannot deliver"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:183
+msgid "Put the order On hold and e-mail me"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:183
+msgid "Refund the failed items automatically"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:183
+msgid "Automatic refunds use your payment gateway when it supports refunds."
+msgstr ""
+
+#: includes/class-wasmou-admin.php:184
+msgid "Activation guide"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:184
+msgid "Show the \"How to activate\" tab on product pages"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:185
+msgid "Product images"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:185
+msgid "Download product images when importing"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:186
+msgid "Sync every"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:186
+msgid "minutes"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:186
+msgid "How often prices and stock are refreshed."
+msgstr ""
+
+#: includes/class-wasmou-admin.php:187
+msgid "Alert me when my Wasmou balance is below"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:188
+msgid "Alerts go to"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:199
+msgid "Wasmou balance"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:200
+msgid "Imported products"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:201
+msgid "Orders being delivered"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:202
+msgid "Last sync"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:202
+msgid "ago"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:202
+msgid "never"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:203
+msgid "Store currency"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:204
+msgid "WP-Cron"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:204
+msgid "Disabled: set up a real cron job calling wp-cron.php every minute"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:204
+msgid "Active"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:211
+msgid "Sync prices and stock now"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:211
+msgid "View logs"
+msgstr ""
+
+#. translators: %s: amount
+#: includes/class-wasmou-admin.php:259
+#, php-format
+msgid "Connected. Your Wasmou balance: %s DZD"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:275
+msgid "The catalog is empty."
+msgstr ""
+
+#. translators: 1: updated, 2: out of stock
+#: includes/class-wasmou-admin.php:298
+#, php-format
+msgid "Synced: %1$d products updated, %2$d marked out of stock."
+msgstr ""
+
+#: includes/class-wasmou-admin.php:314
+msgid "No Wasmou products in this order."
+msgstr ""
+
+#: includes/class-wasmou-admin.php:339
+msgid "Check status"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:339
+msgid "Retry failed items"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:374
+msgid "Your Wasmou wallet"
+msgstr ""
+
+#: includes/class-wasmou-admin.php:375
+msgid "Add funds"
+msgstr ""
+
+#: includes/class-wasmou-api.php:19
+msgid "Add your Wasmou API key in WooCommerce > Wasmou first."
+msgstr ""
+
+#: includes/class-wasmou-api.php:51
+msgid "Wasmou is busy (rate limit). Try again in a minute."
+msgstr ""
+
+#: includes/class-wasmou-api.php:61
+msgid "Your Wasmou API key was rejected. Check the key and, if you restricted it to IP addresses, allow this server."
+msgstr ""
+
+#. translators: 1: product, 2: ids
+#: includes/class-wasmou-fulfillment.php:175
+#, php-format
+msgid "Wasmou: purchased \"%1$s\" (Wasmou order %2$s)."
+msgstr ""
+
+#. translators: 1: product, 2: error
+#: includes/class-wasmou-fulfillment.php:180
+#, php-format
+msgid "Wasmou: could not buy \"%1$s\": %2$s"
+msgstr ""
+
+#: includes/class-wasmou-fulfillment.php:189
+msgid "Wasmou could not be reached for an order"
+msgstr ""
+
+#. translators: %d: order number
+#: includes/class-wasmou-fulfillment.php:189
+#, php-format
+msgid "Order #%d could not be sent to Wasmou after several tries. Check the order in Wasmou before refunding: the purchase may have gone through."
+msgstr ""
+
+#: includes/class-wasmou-fulfillment.php:269
+msgid "A Wasmou order is taking very long"
+msgstr ""
+
+#. translators: %d: order number
+#: includes/class-wasmou-fulfillment.php:269
+#, php-format
+msgid "Order #%d is still waiting for Wasmou. Please check it in your Wasmou account."
+msgstr ""
+
+#: includes/class-wasmou-fulfillment.php:292
+msgid "Wasmou: everything was delivered."
+msgstr ""
+
+#: includes/class-wasmou-fulfillment.php:295
+msgid "Wasmou delivered all codes."
+msgstr ""
+
+#: includes/class-wasmou-fulfillment.php:308
+msgid "Wasmou: part of this order could not be delivered:"
+msgstr ""
+
+#: includes/class-wasmou-fulfillment.php:315
+msgid "Wasmou could not fulfil this order: needs your attention."
+msgstr ""
+
+#. translators: %d: order number
+#: includes/class-wasmou-fulfillment.php:318
+#, php-format
+msgid "Order #%d could not be fulfilled by Wasmou"
+msgstr ""
+
+#: includes/class-wasmou-fulfillment.php:331
+msgid "Wasmou could not deliver this product."
+msgstr ""
+
+#: includes/class-wasmou-fulfillment.php:335
+msgid "Wasmou: failed items were refunded automatically."
+msgstr ""
+
+#: includes/class-wasmou-fulfillment.php:337
+msgid "Wasmou: automatic refund failed, please refund manually:"
+msgstr ""
+
+#: includes/class-wasmou-fulfillment.php:390
+msgid "Delivered"
+msgstr ""
+
+#: includes/class-wasmou-fulfillment.php:392
+msgid "Delivery problem: we are looking into it"
+msgstr ""
+
+#: includes/class-wasmou-fulfillment.php:394
+msgid "Being prepared. This page updates by itself."
+msgstr ""
+
+#: includes/class-wasmou-fulfillment.php:403
+#: includes/class-wasmou-fulfillment.php:482
+msgid "Your delivery"
+msgstr ""
+
+#: includes/class-wasmou-fulfillment.php:408
+msgid "Copy"
+msgstr ""
+
+#: includes/class-wasmou-fulfillment.php:411
+#: includes/class-wasmou-fulfillment.php:420
+#: includes/class-wasmou-storefront.php:146
+#: includes/class-wasmou-storefront.php:172
+msgid "How to activate"
+msgstr ""
+
+#: includes/class-wasmou-fulfillment.php:418
+#: includes/class-wasmou-fulfillment.php:488
+msgid "Your subscription was added to your account. Check your e-mail and follow the steps below."
+msgstr ""
+
+#. translators: %s: site name
+#: includes/class-wasmou-fulfillment.php:506
+#, php-format
+msgid "Your order from %s is ready"
+msgstr ""
+
+#: includes/class-wasmou-fulfillment.php:507
+msgid "Good news, your order has been delivered:"
+msgstr ""
+
+#: includes/class-wasmou-importer.php:160
+#: includes/class-wasmou-importer.php:222
+msgid "Plan"
+msgstr ""
+
+#: includes/class-wasmou-plugin.php:15
+msgid "Wasmou for WooCommerce needs WooCommerce to be installed and active."
+msgstr ""
+
+#: includes/class-wasmou-plugin.php:32
+msgid "Every 5 minutes (Wasmou)"
+msgstr ""
+
+#: includes/class-wasmou-plugin.php:33
+msgid "Wasmou catalog sync"
+msgstr ""
+
+#: includes/class-wasmou-plugin.php:72
+msgid "No API key"
+msgstr ""
+
+#: includes/class-wasmou-plugin.php:100
+msgid "Your Wasmou balance is low"
+msgstr ""
+
+#. translators: %s: amount
+#: includes/class-wasmou-plugin.php:100
+#, php-format
+msgid "Your Wasmou balance is %s DZD. Add funds so your customers keep getting instant delivery: https://myapp.wasmou.net/deposit"
+msgstr ""
+
+#: includes/class-wasmou-storefront.php:52
+msgid "Full warranty"
+msgstr ""
+
+#: includes/class-wasmou-storefront.php:55
+msgid "No warranty"
+msgstr ""
+
+#: includes/class-wasmou-storefront.php:59
+msgid "24-hour warranty"
+msgstr ""
+
+#. translators: %d: number of days
+#: includes/class-wasmou-storefront.php:63
+#, php-format
+msgid "%d-day warranty"
+msgid_plural "%d-day warranty"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of months
+#: includes/class-wasmou-storefront.php:67
+#, php-format
+msgid "%d-month warranty"
+msgstr ""
+
+#. translators: %s: number of years
+#: includes/class-wasmou-storefront.php:72
+msgid "1-year warranty"
+msgstr ""
+
+#. translators: %s: number of years
+#: includes/class-wasmou-storefront.php:72
+#, php-format
+msgid "%s-year warranty"
+msgstr ""
+
+#: includes/class-wasmou-storefront.php:77
+msgid "Added to your account, usually the same day"
+msgstr ""
+
+#: includes/class-wasmou-storefront.php:77
+msgid "Instant delivery after payment"
+msgstr ""
+
+#: includes/class-wasmou-storefront.php:113
+msgid "required"
+msgstr ""
+
+#: includes/class-wasmou-storefront.php:165
+msgid "What you get"
+msgstr ""
+
+#: includes/class-wasmou-storefront.php:179
+msgid "Warranty & notes"
+msgstr ""
+
+#. translators: %s: field label
+#: includes/class-wasmou-storefront.php:219
+#, php-format
+msgid "%s is required."
+msgstr ""
+
+#. translators: %s: field label
+#: includes/class-wasmou-storefront.php:224
+#, php-format
+msgid "%s must be a valid e-mail address."
+msgstr ""
+
+#: includes/class-wasmou-storefront.php:243
+msgid "This subscription is added to one account: order one at a time."
+msgstr ""
+
+#: includes/class-wasmou-storefront.php:265
+#: includes/class-wasmou-storefront.php:277
+msgid "Details"
+msgstr ""
+
+#. translators: %s: product name
+#: includes/class-wasmou-storefront.php:320
+#, php-format
+msgid "\"%s\" is temporarily unavailable. Please remove it from your cart or try again later."
+msgstr ""
+
+#. translators: %s: product name
+#: includes/class-wasmou-storefront.php:325
+#, php-format
+msgid "Not enough stock for \"%s\". Please lower the quantity."
+msgstr ""
+
+#. translators: %s: product name
+#: includes/class-wasmou-storefront.php:330
+#, php-format
+msgid "Details are missing for \"%s\". Remove it and add it again from its product page."
+msgstr ""
+
+#. translators: %s: product name
+#: includes/class-wasmou-storefront.php:336
+#, php-format
+msgid "The price of \"%s\" changed. Please review your cart and try again."
+msgstr ""
+
+#: includes/class-wasmou-storefront.php:343
+msgid "These products cannot be delivered right now. Please try again later."
+msgstr ""
+
+#: includes/class-wasmou-storefront.php:344
+msgid "Wasmou wallet too low for a customer order"
+msgstr ""
+
+#: includes/class-wasmou-storefront.php:344
+msgid "A customer tried to buy but your Wasmou wallet cannot cover it. Add funds at myapp.wasmou.net."
+msgstr ""

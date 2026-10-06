@@ -1,0 +1,26 @@
+.wasmou-wrap{max-width:1180px}
+.wasmou-title{display:flex;align-items:center;gap:.6rem;font-weight:800}
+.wasmou-title small{font-size:.5em;opacity:.55;font-weight:600}
+.wasmou-logo{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:#0a0a0a;color:#ffc400;font-weight:900;font-size:22px}
+.wasmou-panel{background:#fff;border:1px solid #dcdcde;border-top:0;padding:20px 24px 28px}
+.wasmou-lead{font-size:14px;max-width:760px;margin-top:0}
+.wasmou-inline{margin-inline-start:10px;font-weight:600}.wasmou-inline.ok{color:#00794c}.wasmou-inline.bad{color:#b32d2e}
+.wasmou-help{margin-top:24px;padding:14px 18px;background:#f6f5f0;border-radius:8px;max-width:760px}
+.wasmou-toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+.wasmou-toolbar input[type=search]{min-width:240px}.wasmou-spacer{flex:1}
+.wasmou-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}
+.wasmou-card{position:relative;display:flex;flex-direction:column;gap:6px;border:2px solid #e2e2e2;border-radius:12px;padding:10px;background:#fff;cursor:pointer;transition:border-color .15s,box-shadow .15s}
+.wasmou-card:hover{border-color:#999}.wasmou-card.is-on{border-color:#ffc400;box-shadow:0 0 0 3px rgba(255,196,0,.28)}
+.wasmou-card>input{position:absolute;top:10px;inset-inline-start:10px;z-index:2}
+.wasmou-thumb{display:block;aspect-ratio:4/3;border-radius:8px;background:#0a0a0a;overflow:hidden}
+.wasmou-thumb img{width:100%;height:100%;object-fit:cover}
+.wasmou-name{font-weight:700;line-height:1.25}.wasmou-meta{font-size:12px;color:#646970}
+.wasmou-badge{align-self:flex-start;font-size:11px;font-weight:700;border-radius:999px;padding:1px 9px}
+.wasmou-badge.new{background:#fff3c4;color:#6a4b00}.wasmou-badge.imp{background:#d7f5e6;color:#00613d}
+.wasmou-progress{height:8px;background:#eee;border-radius:99px;overflow:hidden;margin:6px 0}.wasmou-progress>div{height:100%;width:0;background:#ffc400;transition:width .3s}
+.wasmou-status th{width:260px}
+.wasmou-example{background:#f6f5f0;padding:10px 14px;border-radius:8px;display:inline-block}
+.wasmou-box{border:1px solid #dcdcde;border-radius:8px;padding:8px 10px;margin-bottom:8px}
+.wasmou-pill{display:inline-block;font-size:11px;font-weight:700;border-radius:99px;padding:1px 9px;background:#eee}
+.wasmou-pill.wasmou-delivered{background:#d7f5e6;color:#00613d}.wasmou-pill.wasmou-failed{background:#fde2e2;color:#9b1c1c}.wasmou-pill.wasmou-ordered,.wasmou-pill.wasmou-purchasing{background:#fff3c4;color:#6a4b00}
+.wasmou-err{color:#b32d2e;font-size:12px}.wasmou-key{background:#0a0a0a;color:#ffc400;padding:6px 8px;border-radius:6px;white-space:pre-wrap;word-break:break-all;font-size:12px}
