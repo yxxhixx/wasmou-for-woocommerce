@@ -3,7 +3,7 @@
  * Plugin Name:       Wasmou for WooCommerce
  * Plugin URI:        https://gateway.wasmou.net
  * Description:       Sell Wasmou gift cards, game top-ups and AI subscriptions in your own WooCommerce store. Import products in one click, keep prices and stock in sync, and deliver codes automatically.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            Wasmou
  * Author URI:        https://myapp.wasmou.net
  * Text Domain:       wasmou-for-woocommerce
@@ -19,7 +19,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'WASMOU_WC_VERSION', '1.0.0' );
+define( 'WASMOU_WC_VERSION', '1.1.0' );
 define( 'WASMOU_WC_FILE', __FILE__ );
 define( 'WASMOU_WC_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WASMOU_WC_URL', plugin_dir_url( __FILE__ ) );
@@ -43,6 +43,7 @@ require_once WASMOU_WC_DIR . 'includes/class-wasmou-catalog.php';
 require_once WASMOU_WC_DIR . 'includes/class-wasmou-importer.php';
 require_once WASMOU_WC_DIR . 'includes/class-wasmou-storefront.php';
 require_once WASMOU_WC_DIR . 'includes/class-wasmou-fulfillment.php';
+require_once WASMOU_WC_DIR . 'includes/class-wasmou-webhook.php';
 require_once WASMOU_WC_DIR . 'includes/class-wasmou-admin.php';
 require_once WASMOU_WC_DIR . 'includes/class-wasmou-plugin.php';
 

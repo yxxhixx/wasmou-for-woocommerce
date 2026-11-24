@@ -698,3 +698,60 @@ msgstr ""
 #: includes/class-wasmou-storefront.php:344
 msgid "A customer tried to buy but your Wasmou wallet cannot cover it. Add funds at myapp.wasmou.net."
 msgstr ""
+
+msgid "Wasmou prices are in your wallet currency (%s). Choose how they become your shop prices."
+msgstr ""
+
+msgid "Exchange rate (%1$s per 1 %2$s)"
+msgstr ""
+
+msgid "Example: if 1 EUR = 1.08 USD, enter 1.08. Prices are recalculated at every sync."
+msgstr ""
+
+msgid "Example: a product that costs %1$s %2$s will sell for"
+msgstr ""
+
+msgid "Your Wasmou balance is %s. Add funds so your customers keep getting instant delivery: https://myapp.wasmou.net/deposit"
+msgstr ""
+
+msgid "Connected. Your Wasmou balance: %s"
+msgstr ""
+
+msgid "Instant updates"
+msgstr ""
+
+msgid "Wasmou tells your shop the moment an order is delivered, so customers get their code in seconds. Orders are still checked every few minutes as a safety net."
+msgstr ""
+
+msgid "On"
+msgstr ""
+
+msgid "Off"
+msgstr ""
+
+msgid "last message %s ago"
+msgstr ""
+
+msgid "Turn off"
+msgstr ""
+
+msgid "Turn on instant updates"
+msgstr ""
+
+msgid "Instant updates need your site to use https://."
+msgstr ""
+
+msgid "Your Wasmou account already sends webhooks to %s. The plugin will not replace it. Remove it in Wasmou (API access) first, or keep using the normal updates."
+msgstr ""
+
+msgid "Wasmou did not return a signing secret. Try again."
+msgstr ""
+
+msgid "Instant updates are on and the test message arrived."
+msgstr ""
+
+msgid "Instant updates are on, but the test message did not arrive. Check that your site is reachable from the internet."
+msgstr ""
+
+msgid "Instant updates are off. Orders are still checked every few minutes."
+msgstr ""

@@ -22,6 +22,7 @@ class Wasmou_WC_Plugin {
 		add_action( self::SYNC_HOOK, array( __CLASS__, 'cron_sync' ) );
 		Wasmou_WC_Storefront::hooks();
 		Wasmou_WC_Fulfillment::hooks();
+		Wasmou_WC_Webhook::hooks();
 		if ( is_admin() ) {
 			Wasmou_WC_Admin::hooks();
 		}
@@ -83,7 +84,7 @@ class Wasmou_WC_Plugin {
 		return array( 'ok' => true, 'stats' => $stats );
 	}
 
-	/** Spendable Wasmou balance in DZD (cached 45 s), or null when it cannot be read. */
+	/** Spendable Wasmou balance in the wallet currency (cached 45 s), or null when it cannot be read. */
 	public static function wallet_balance( $force = false ) {
 		$c = get_transient( 'wasmou_wc_wallet' );
 		if ( ! $force && is_array( $c ) ) {
@@ -95,9 +96,9 @@ class Wasmou_WC_Plugin {
 		}
 		$v = (float) $r['data']['available'];
 		set_transient( 'wasmou_wc_wallet', array( 'v' => $v ), 45 );
-		$low = (float) Wasmou_WC_Settings::get( 'low_balance_dzd', 0 );
+		$low = Wasmou_WC_Settings::low_balance();
 		if ( $low > 0 && $v < $low ) {
-			self::alert( 'low-balance', __( 'Your Wasmou balance is low', 'wasmou-for-woocommerce' ), sprintf( /* translators: %s: amount */ __( 'Your Wasmou balance is %s DZD. Add funds so your customers keep getting instant delivery: https://myapp.wasmou.net/deposit', 'wasmou-for-woocommerce' ), number_format_i18n( $v, 2 ) ) );
+			self::alert( 'low-balance', __( 'Your Wasmou balance is low', 'wasmou-for-woocommerce' ), sprintf( /* translators: %s: amount */ __( 'Your Wasmou balance is %s. Add funds so your customers keep getting instant delivery: https://myapp.wasmou.net/deposit', 'wasmou-for-woocommerce' ), number_format_i18n( $v, 2 ) . ' ' . Wasmou_WC_Settings::account_currency() ) );
 		}
 
 		return $v;

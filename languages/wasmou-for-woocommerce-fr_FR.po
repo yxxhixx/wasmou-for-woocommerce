@@ -464,3 +464,60 @@ msgstr "Portefeuille Wasmou insuffisant pour une commande client"
 
 msgid "A customer tried to buy but your Wasmou wallet cannot cover it. Add funds at myapp.wasmou.net."
 msgstr "Un client a essayé d’acheter mais votre portefeuille Wasmou ne peut pas couvrir la commande. Ajoutez des fonds sur myapp.wasmou.net."
+
+msgid "Wasmou prices are in your wallet currency (%s). Choose how they become your shop prices."
+msgstr "Les prix Wasmou sont dans la devise de votre portefeuille (%s). Choisissez comment ils deviennent vos prix en boutique."
+
+msgid "Exchange rate (%1$s per 1 %2$s)"
+msgstr "Taux de change (%1$s pour 1 %2$s)"
+
+msgid "Example: if 1 EUR = 1.08 USD, enter 1.08. Prices are recalculated at every sync."
+msgstr "Exemple : si 1 EUR = 1,08 USD, saisissez 1,08. Les prix sont recalculés à chaque synchronisation."
+
+msgid "Example: a product that costs %1$s %2$s will sell for"
+msgstr "Exemple : un produit qui coûte %1$s %2$s sera vendu"
+
+msgid "Your Wasmou balance is %s. Add funds so your customers keep getting instant delivery: https://myapp.wasmou.net/deposit"
+msgstr "Votre solde Wasmou est de %s. Ajoutez des fonds pour que vos clients continuent à être livrés instantanément : https://myapp.wasmou.net/deposit"
+
+msgid "Connected. Your Wasmou balance: %s"
+msgstr "Connecté. Votre solde Wasmou : %s"
+
+msgid "Instant updates"
+msgstr "Mises à jour instantanées"
+
+msgid "Wasmou tells your shop the moment an order is delivered, so customers get their code in seconds. Orders are still checked every few minutes as a safety net."
+msgstr "Wasmou prévient votre boutique dès qu'une commande est livrée : vos clients reçoivent leur code en quelques secondes. Les commandes sont toujours vérifiées toutes les quelques minutes par sécurité."
+
+msgid "On"
+msgstr "Activé"
+
+msgid "Off"
+msgstr "Désactivé"
+
+msgid "last message %s ago"
+msgstr "dernier message il y a %s"
+
+msgid "Turn off"
+msgstr "Désactiver"
+
+msgid "Turn on instant updates"
+msgstr "Activer les mises à jour instantanées"
+
+msgid "Instant updates need your site to use https://."
+msgstr "Les mises à jour instantanées exigent que votre site utilise https://."
+
+msgid "Your Wasmou account already sends webhooks to %s. The plugin will not replace it. Remove it in Wasmou (API access) first, or keep using the normal updates."
+msgstr "Votre compte Wasmou envoie déjà des webhooks vers %s. Le plugin ne le remplacera pas. Supprimez-le d'abord dans Wasmou (accès API), ou continuez avec les mises à jour normales."
+
+msgid "Wasmou did not return a signing secret. Try again."
+msgstr "Wasmou n'a pas renvoyé de secret de signature. Réessayez."
+
+msgid "Instant updates are on and the test message arrived."
+msgstr "Les mises à jour instantanées sont activées et le message de test est bien arrivé."
+
+msgid "Instant updates are on, but the test message did not arrive. Check that your site is reachable from the internet."
+msgstr "Les mises à jour instantanées sont activées, mais le message de test n'est pas arrivé. Vérifiez que votre site est accessible depuis Internet."
+
+msgid "Instant updates are off. Orders are still checked every few minutes."
+msgstr "Les mises à jour instantanées sont désactivées. Les commandes sont toujours vérifiées toutes les quelques minutes."

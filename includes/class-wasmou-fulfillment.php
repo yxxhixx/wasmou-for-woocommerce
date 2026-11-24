@@ -162,7 +162,7 @@ class Wasmou_WC_Fulfillment {
 				$item->save();
 			}
 			$inputs = $item->get_meta( '_wasmou_inputs' );
-			$res    = Wasmou_WC_API::purchase( $vid, (int) $item->get_quantity(), is_array( $inputs ) ? $inputs : array(), $idem );
+			$res    = Wasmou_WC_API::purchase( $vid, (int) $item->get_quantity(), is_array( $inputs ) ? $inputs : array(), $idem, 'WC-' . $order_id . '-' . $item_id );
 
 			if ( $res['ok'] ) {
 				$ids = array_map( 'strval', (array) ( $res['data']['order_ids'] ?? array() ) );

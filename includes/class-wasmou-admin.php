@@ -10,6 +10,7 @@ class Wasmou_WC_Admin {
 		add_action( 'admin_menu', array( __CLASS__, 'menu' ) );
 		add_action( 'admin_post_wasmou_wc_save', array( __CLASS__, 'save' ) );
 		add_action( 'admin_post_wasmou_wc_order_action', array( __CLASS__, 'order_action' ) );
+		add_action( 'admin_post_wasmou_wc_webhook', array( __CLASS__, 'webhook_action' ) );
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'assets' ) );
 		add_action( 'admin_notices', array( __CLASS__, 'notices' ) );
 		add_action( 'add_meta_boxes', array( __CLASS__, 'metabox' ), 10, 2 );
@@ -88,6 +89,11 @@ class Wasmou_WC_Admin {
 		$tabs = self::tabs();
 		$tab  = isset( $_GET['tab'] ) && isset( $tabs[ $_GET['tab'] ] ) ? sanitize_key( $_GET['tab'] ) : 'connection'; // phpcs:ignore WordPress.Security.NonceVerification
 		echo '<div class="wrap wasmou-wrap"><h1 class="wasmou-title"><span class="wasmou-logo">W</span> Wasmou <small>v' . esc_html( WASMOU_WC_VERSION ) . '</small></h1>';
+		$flash = get_transient( 'wasmou_wc_flash_' . get_current_user_id() );
+		if ( is_array( $flash ) ) {
+			delete_transient( 'wasmou_wc_flash_' . get_current_user_id() );
+			echo '<div class="notice notice-' . ( ! empty( $flash['ok'] ) ? 'success' : 'error' ) . ' is-dismissible"><p>' . esc_html( (string) $flash['message'] ) . '</p></div>';
+		}
 		if ( isset( $_GET['saved'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 			echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__( 'Settings saved.', 'wasmou-for-woocommerce' ) . '</p></div>';
 		}
@@ -134,19 +140,21 @@ class Wasmou_WC_Admin {
 	private static function tab_pricing() {
 		$s    = Wasmou_WC_Settings::all();
 		$cur  = function_exists( 'get_woocommerce_currency' ) ? get_woocommerce_currency() : '';
-		echo '<p class="wasmou-lead">' . esc_html__( 'Wasmou prices are in Algerian dinar (DZD). Choose how they become your shop prices.', 'wasmou-for-woocommerce' ) . '</p>';
+		$wc   = Wasmou_WC_Settings::account_currency();
+		echo '<p class="wasmou-lead">' . esc_html( sprintf( /* translators: %s: currency code */ __( 'Wasmou prices are in your wallet currency (%s). Choose how they become your shop prices.', 'wasmou-for-woocommerce' ), $wc ) ) . '</p>';
 		self::form_open( 'pricing' );
 		echo '<table class="form-table">';
 		self::row( __( 'Your margin', 'wasmou-for-woocommerce' ), self::select( 'markup_type', $s['markup_type'], array( 'percent' => __( 'Percent (%) on top of cost', 'wasmou-for-woocommerce' ), 'fixed' => __( 'Fixed amount added to cost', 'wasmou-for-woocommerce' ) ) ) . ' <input type="number" step="0.01" min="0" name="markup_value" value="' . esc_attr( $s['markup_value'] ) . '" class="small-text" />', __( 'A fixed amount is in your store currency.', 'wasmou-for-woocommerce' ) );
-		if ( 'DZD' === $cur ) {
-			self::row( __( 'Currency', 'wasmou-for-woocommerce' ), '<strong>DZD</strong> — ' . esc_html__( 'same as Wasmou, no conversion.', 'wasmou-for-woocommerce' ) );
+		if ( $wc === $cur ) {
+			self::row( __( 'Currency', 'wasmou-for-woocommerce' ), '<strong>' . esc_html( $wc ) . '</strong> — ' . esc_html__( 'same as Wasmou, no conversion.', 'wasmou-for-woocommerce' ) );
 		} else {
-			self::row( /* translators: %s: currency code */ sprintf( __( 'Exchange rate (DZD per 1 %s)', 'wasmou-for-woocommerce' ), $cur ), '<input type="number" step="0.0001" min="0.0001" name="exchange_rate" value="' . esc_attr( $s['exchange_rate'] ) . '" class="small-text" />', __( 'Example: if 1 USD = 250 DZD, enter 250. Prices are recalculated at every sync.', 'wasmou-for-woocommerce' ) );
+			self::row( /* translators: %s: currency code */ sprintf( /* translators: 1: Wasmou currency, 2: store currency */ __( 'Exchange rate (%1$s per 1 %2$s)', 'wasmou-for-woocommerce' ), $wc, $cur ), '<input type="number" step="0.0001" min="0.0001" name="exchange_rate" value="' . esc_attr( $s['exchange_rate'] ) . '" class="small-text" />', 'USD' === $wc ? __( 'Example: if 1 EUR = 1.08 USD, enter 1.08. Prices are recalculated at every sync.', 'wasmou-for-woocommerce' ) : __( 'Example: if 1 USD = 250 DZD, enter 250. Prices are recalculated at every sync.', 'wasmou-for-woocommerce' ) );
 		}
 		self::row( __( 'Rounding', 'wasmou-for-woocommerce' ), self::select( 'rounding', $s['rounding'], array( 'none' => __( 'None (store decimals)', 'wasmou-for-woocommerce' ), 'integer' => __( 'Up to a whole number', 'wasmou-for-woocommerce' ), 'ends_99' => __( 'End in .99', 'wasmou-for-woocommerce' ), 'multiple_5' => __( 'Up to a multiple of 5', 'wasmou-for-woocommerce' ), 'multiple_10' => __( 'Up to a multiple of 10', 'wasmou-for-woocommerce' ) ) ) );
 		echo '</table>';
-		$example = Wasmou_WC_Pricing::sell( 1000.0, $s );
-		echo '<p class="wasmou-example">' . esc_html__( 'Example: a product that costs 1,000 DZD will sell for', 'wasmou-for-woocommerce' ) . ' <strong>' . wp_kses_post( wc_price( $example ) ) . '</strong></p>';
+		$ex_cost = 'USD' === $wc ? 10.0 : 1000.0;
+		$example = Wasmou_WC_Pricing::sell( $ex_cost, $s );
+		echo '<p class="wasmou-example">' . esc_html( sprintf( /* translators: 1: amount, 2: currency code */ __( 'Example: a product that costs %1$s %2$s will sell for', 'wasmou-for-woocommerce' ), number_format_i18n( $ex_cost, 0 ), $wc ) ) . ' <strong>' . wp_kses_post( wc_price( $example ) ) . '</strong></p>';
 		echo '<p class="submit"><button class="button button-primary">' . esc_html__( 'Save', 'wasmou-for-woocommerce' ) . '</button></p></form>';
 	}
 
@@ -184,9 +192,48 @@ class Wasmou_WC_Admin {
 		self::row( __( 'Activation guide', 'wasmou-for-woocommerce' ), '<label><input type="checkbox" name="guide_in_product" value="yes" ' . checked( 'yes', $s['guide_in_product'], false ) . ' /> ' . esc_html__( 'Show the "How to activate" tab on product pages', 'wasmou-for-woocommerce' ) . '</label>' );
 		self::row( __( 'Product images', 'wasmou-for-woocommerce' ), '<label><input type="checkbox" name="import_images" value="yes" ' . checked( 'yes', $s['import_images'], false ) . ' /> ' . esc_html__( 'Download product images when importing', 'wasmou-for-woocommerce' ) . '</label>' );
 		self::row( __( 'Sync every', 'wasmou-for-woocommerce' ), '<input type="number" min="5" max="1440" name="sync_minutes" value="' . esc_attr( $s['sync_minutes'] ) . '" class="small-text" /> ' . esc_html__( 'minutes', 'wasmou-for-woocommerce' ), __( 'How often prices and stock are refreshed.', 'wasmou-for-woocommerce' ) );
-		self::row( __( 'Alert me when my Wasmou balance is below', 'wasmou-for-woocommerce' ), '<input type="number" min="0" step="1" name="low_balance_dzd" value="' . esc_attr( $s['low_balance_dzd'] ) . '" class="small-text" /> DZD' );
+		self::row( __( 'Alert me when my Wasmou balance is below', 'wasmou-for-woocommerce' ), '<input type="number" min="0" step="1" name="low_balance_dzd" value="' . esc_attr( $s['low_balance_dzd'] ) . '" class="small-text" /> ' . esc_html( Wasmou_WC_Settings::account_currency() ) );
 		self::row( __( 'Alerts go to', 'wasmou-for-woocommerce' ), '<input type="email" name="notify_email" value="' . esc_attr( $s['notify_email'] ) . '" class="regular-text" placeholder="' . esc_attr( get_option( 'admin_email' ) ) . '" />' );
 		echo '</table><p class="submit"><button class="button button-primary">' . esc_html__( 'Save', 'wasmou-for-woocommerce' ) . '</button></p></form>';
+		self::box_instant();
+	}
+
+	/** Instant updates (webhook): on or off, with its own buttons (outside the settings form). */
+	private static function box_instant() {
+		$on   = Wasmou_WC_Webhook::is_on();
+		$last = get_option( 'wasmou_wc_webhook_last' );
+		echo '<div class="wasmou-help"><h3>' . esc_html__( 'Instant updates', 'wasmou-for-woocommerce' ) . '</h3>';
+		echo '<p>' . esc_html__( 'Wasmou tells your shop the moment an order is delivered, so customers get their code in seconds. Orders are still checked every few minutes as a safety net.', 'wasmou-for-woocommerce' ) . '</p>';
+		echo '<p><strong>' . ( $on ? esc_html__( 'On', 'wasmou-for-woocommerce' ) : esc_html__( 'Off', 'wasmou-for-woocommerce' ) ) . '</strong>';
+		if ( $on && is_array( $last ) ) {
+			echo ' · ' . esc_html( sprintf( /* translators: %s: time */ __( 'last message %s ago', 'wasmou-for-woocommerce' ), human_time_diff( (int) $last['time'] ) ) );
+		}
+		echo '</p>';
+		if ( Wasmou_WC_Settings::has_key() ) {
+			echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '"><input type="hidden" name="action" value="wasmou_wc_webhook" />';
+			wp_nonce_field( 'wasmou_wc_webhook', '_wasmou_nonce' );
+			if ( $on ) {
+				echo '<button class="button" name="do" value="disable">' . esc_html__( 'Turn off', 'wasmou-for-woocommerce' ) . '</button>';
+			} else {
+				echo '<button class="button button-primary" name="do" value="enable">' . esc_html__( 'Turn on instant updates', 'wasmou-for-woocommerce' ) . '</button>';
+			}
+			echo '</form>';
+		}
+		echo '</div>';
+	}
+
+	public static function webhook_action() {
+		if ( ! current_user_can( 'manage_woocommerce' ) ) {
+			wp_die( esc_html__( 'You are not allowed to do this.', 'wasmou-for-woocommerce' ), '', array( 'response' => 403 ) );
+		}
+		check_admin_referer( 'wasmou_wc_webhook', '_wasmou_nonce' );
+		$do  = isset( $_POST['do'] ) ? sanitize_key( wp_unslash( $_POST['do'] ) ) : '';
+		$res = 'enable' === $do ? Wasmou_WC_Webhook::enable() : ( 'disable' === $do ? Wasmou_WC_Webhook::disable() : array( 'ok' => false, 'message' => '' ) );
+		if ( '' !== $res['message'] ) {
+			set_transient( 'wasmou_wc_flash_' . get_current_user_id(), $res, 60 );
+		}
+		wp_safe_redirect( admin_url( 'admin.php?page=' . self::SLUG . '&tab=delivery' ) );
+		exit;
 	}
 
 	private static function tab_status() {
@@ -196,11 +243,11 @@ class Wasmou_WC_Admin {
 		global $wpdb;
 		$imported = (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->postmeta} WHERE meta_key = '_wasmou_product_id'" );
 		$rows = array(
-			__( 'Wasmou balance', 'wasmou-for-woocommerce' ) => null === $bal ? '—' : number_format_i18n( $bal, 2 ) . ' DZD',
+			__( 'Wasmou balance', 'wasmou-for-woocommerce' ) => null === $bal ? '—' : number_format_i18n( $bal, 2 ) . ' ' . Wasmou_WC_Settings::account_currency(),
 			__( 'Imported products', 'wasmou-for-woocommerce' ) => (string) $imported,
 			__( 'Orders being delivered', 'wasmou-for-woocommerce' ) => (string) $pending,
 			__( 'Last sync', 'wasmou-for-woocommerce' ) => is_array( $last ) ? human_time_diff( (int) $last['time'] ) . ' ' . __( 'ago', 'wasmou-for-woocommerce' ) . ( ! empty( $last['error'] ) ? ' — ' . $last['error'] : '' ) : __( 'never', 'wasmou-for-woocommerce' ),
-			__( 'Store currency', 'wasmou-for-woocommerce' ) => get_woocommerce_currency() . ( 'DZD' === get_woocommerce_currency() ? '' : ' (1 = ' . Wasmou_WC_Pricing::rate() . ' DZD)' ),
+			__( 'Store currency', 'wasmou-for-woocommerce' ) => get_woocommerce_currency() . ( Wasmou_WC_Settings::account_currency() === get_woocommerce_currency() ? '' : ' (1 = ' . Wasmou_WC_Pricing::rate() . ' ' . Wasmou_WC_Settings::account_currency() . ')' ),
 			__( 'WP-Cron', 'wasmou-for-woocommerce' ) => ( defined( 'DISABLE_WP_CRON' ) && DISABLE_WP_CRON ) ? __( 'Disabled: set up a real cron job calling wp-cron.php every minute', 'wasmou-for-woocommerce' ) : __( 'Active', 'wasmou-for-woocommerce' ),
 			'WordPress / WooCommerce / PHP' => get_bloginfo( 'version' ) . ' / ' . ( defined( 'WC_VERSION' ) ? WC_VERSION : '?' ) . ' / ' . PHP_VERSION,
 		);
@@ -256,7 +303,7 @@ class Wasmou_WC_Admin {
 			wp_send_json_error( array( 'message' => $r['message'] ) );
 		}
 		set_transient( 'wasmou_wc_wallet', array( 'v' => $r['data']['available'] ), 45 );
-		wp_send_json_success( array( 'message' => sprintf( /* translators: %s: amount */ __( 'Connected. Your Wasmou balance: %s DZD', 'wasmou-for-woocommerce' ), number_format_i18n( $r['data']['available'], 2 ) ) ) );
+		wp_send_json_success( array( 'message' => sprintf( /* translators: %s: amount */ __( 'Connected. Your Wasmou balance: %s', 'wasmou-for-woocommerce' ), number_format_i18n( $r['data']['available'], 2 ) . ' ' . Wasmou_WC_Settings::account_currency() ) ) );
 	}
 
 	public static function ajax_list() {
@@ -371,7 +418,7 @@ class Wasmou_WC_Admin {
 			'Wasmou',
 			static function () {
 				$bal = Wasmou_WC_Plugin::wallet_balance();
-				echo '<p style="font-size:22px;margin:0"><strong>' . ( null === $bal ? '—' : esc_html( number_format_i18n( $bal, 2 ) ) ) . ' DZD</strong></p><p>' . esc_html__( 'Your Wasmou wallet', 'wasmou-for-woocommerce' ) . '</p>';
+				echo '<p style="font-size:22px;margin:0"><strong>' . ( null === $bal ? '—' : esc_html( number_format_i18n( $bal, 2 ) . ' ' . Wasmou_WC_Settings::account_currency() ) ) . '</strong></p><p>' . esc_html__( 'Your Wasmou wallet', 'wasmou-for-woocommerce' ) . '</p>';
 				echo '<p><a href="https://myapp.wasmou.net/deposit" target="_blank" rel="noopener" class="button button-primary">' . esc_html__( 'Add funds', 'wasmou-for-woocommerce' ) . '</a> <a href="' . esc_url( admin_url( 'admin.php?page=wasmou&tab=status' ) ) . '" class="button">' . esc_html__( 'Status', 'wasmou-for-woocommerce' ) . '</a></p>';
 			}
 		);

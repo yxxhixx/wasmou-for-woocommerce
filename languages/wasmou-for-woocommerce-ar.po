@@ -468,3 +468,60 @@ msgstr "رصيد محفظة Wasmou لا يكفي لطلب عميل"
 
 msgid "A customer tried to buy but your Wasmou wallet cannot cover it. Add funds at myapp.wasmou.net."
 msgstr "حاول عميل الشراء لكن رصيد محفظتك في Wasmou لا يغطي الطلب. اشحن رصيدك عبر myapp.wasmou.net."
+
+msgid "Wasmou prices are in your wallet currency (%s). Choose how they become your shop prices."
+msgstr "أسعار Wasmou بعملة محفظتك (%s). اختر كيف تتحول إلى أسعار متجرك."
+
+msgid "Exchange rate (%1$s per 1 %2$s)"
+msgstr "سعر الصرف (%1$s مقابل 1 %2$s)"
+
+msgid "Example: if 1 EUR = 1.08 USD, enter 1.08. Prices are recalculated at every sync."
+msgstr "مثال: إذا كان 1 يورو = 1.08 دولار فأدخل 1.08. تُعاد حساب الأسعار عند كل مزامنة."
+
+msgid "Example: a product that costs %1$s %2$s will sell for"
+msgstr "مثال: منتج تكلفته %1$s %2$s سيُباع بـ"
+
+msgid "Your Wasmou balance is %s. Add funds so your customers keep getting instant delivery: https://myapp.wasmou.net/deposit"
+msgstr "رصيدك في Wasmou هو %s. أضف رصيداً ليستمر عملاؤك في الاستلام الفوري: https://myapp.wasmou.net/deposit"
+
+msgid "Connected. Your Wasmou balance: %s"
+msgstr "تم الاتصال. رصيدك في Wasmou: %s"
+
+msgid "Instant updates"
+msgstr "التحديث الفوري"
+
+msgid "Wasmou tells your shop the moment an order is delivered, so customers get their code in seconds. Orders are still checked every few minutes as a safety net."
+msgstr "تُبلغ Wasmou متجرك لحظة تسليم الطلب فيستلم العملاء أكوادهم في ثوانٍ. وتبقى مراجعة الطلبات كل بضع دقائق كإجراء احتياطي."
+
+msgid "On"
+msgstr "مفعّل"
+
+msgid "Off"
+msgstr "متوقف"
+
+msgid "last message %s ago"
+msgstr "آخر رسالة منذ %s"
+
+msgid "Turn off"
+msgstr "إيقاف"
+
+msgid "Turn on instant updates"
+msgstr "تفعيل التحديث الفوري"
+
+msgid "Instant updates need your site to use https://."
+msgstr "يتطلب التحديث الفوري أن يعمل موقعك عبر https://."
+
+msgid "Your Wasmou account already sends webhooks to %s. The plugin will not replace it. Remove it in Wasmou (API access) first, or keep using the normal updates."
+msgstr "حساب Wasmou لديك يرسل الـ webhooks إلى %s أصلاً ولن تستبدله الإضافة. احذفه أولاً من Wasmou (صفحة الـ API) أو واصل بالتحديث العادي."
+
+msgid "Wasmou did not return a signing secret. Try again."
+msgstr "لم ترجع Wasmou مفتاح التوقيع. حاول مرة أخرى."
+
+msgid "Instant updates are on and the test message arrived."
+msgstr "تم تفعيل التحديث الفوري ووصلت رسالة الاختبار."
+
+msgid "Instant updates are on, but the test message did not arrive. Check that your site is reachable from the internet."
+msgstr "تم تفعيل التحديث الفوري لكن رسالة الاختبار لم تصل. تأكد أن موقعك متاح من الإنترنت."
+
+msgid "Instant updates are off. Orders are still checked every few minutes."
+msgstr "تم إيقاف التحديث الفوري. تبقى الطلبات تُراجَع كل بضع دقائق."

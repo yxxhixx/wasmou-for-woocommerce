@@ -1,12 +1,12 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
-/** Turns a Wasmou price (DZD) into the shop price: currency conversion, markup, rounding. */
+/** Turns a Wasmou price (in the wallet currency: DZD, or USD for international accounts) into the shop price: currency conversion, markup, rounding. */
 class Wasmou_WC_Pricing {
 
-	/** DZD per 1 unit of the store currency. */
+	/** Wasmou wallet currency per 1 unit of the store currency (1 when they are the same currency). */
 	public static function rate() {
-		if ( function_exists( 'get_woocommerce_currency' ) && 'DZD' === get_woocommerce_currency() ) {
+		if ( function_exists( 'get_woocommerce_currency' ) && Wasmou_WC_Settings::account_currency() === get_woocommerce_currency() ) {
 			return 1.0;
 		}
 		$r = (float) Wasmou_WC_Settings::get( 'exchange_rate', 1 );

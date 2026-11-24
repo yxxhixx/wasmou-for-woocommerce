@@ -13,7 +13,7 @@ class Wasmou_WC_Settings {
 			'markup_type'        => 'percent', // percent | fixed.
 			'markup_value'       => '15',
 			'rounding'           => 'none',    // none | integer | ends_99 | multiple_5 | multiple_10.
-			'exchange_rate'      => '1',       // Wasmou prices are in DZD: how many DZD equal 1 unit of the store currency.
+			'exchange_rate'      => '1',       // How many units of your Wasmou wallet currency (DZD, or USD) equal 1 unit of the store currency.
 			'auto_complete'      => 'yes',
 			'on_failure'         => 'hold',    // hold | refund.
 			'sync_minutes'       => '15',
@@ -22,6 +22,8 @@ class Wasmou_WC_Settings {
 			'low_balance_dzd'    => '5000',
 			'notify_email'       => '',
 			'catalog_lang'       => 'auto',
+			'webhook_secret'     => '',
+			'webhook_url'        => '',
 		);
 	}
 
@@ -109,6 +111,31 @@ class Wasmou_WC_Settings {
 		$loc = strtolower( substr( determine_locale(), 0, 2 ) );
 
 		return in_array( $loc, array( 'ar', 'fr' ), true ) ? $loc : 'en';
+	}
+
+	/** Currency of the Wasmou wallet, as the API reports it: DZD for local accounts, USD for international ones. */
+	public static function account_currency() {
+		$c = strtoupper( (string) get_option( 'wasmou_wc_account_currency', 'DZD' ) );
+
+		return in_array( $c, array( 'DZD', 'USD' ), true ) ? $c : 'DZD';
+	}
+
+	public static function set_account_currency( $c ) {
+		$c = strtoupper( (string) $c );
+		if ( in_array( $c, array( 'DZD', 'USD' ), true ) && $c !== self::account_currency() ) {
+			update_option( 'wasmou_wc_account_currency', $c, false );
+			delete_transient( 'wasmou_wc_snapshot' );
+		}
+	}
+
+	/** Low balance threshold in the wallet currency (the stored 5000 default means 5000 DZD, about 20 USD). */
+	public static function low_balance() {
+		$v = (float) self::get( 'low_balance_dzd', 0 );
+		if ( 'USD' === self::account_currency() && 5000.0 === $v ) {
+			return 20.0;
+		}
+
+		return $v;
 	}
 
 	public static function notify_email() {

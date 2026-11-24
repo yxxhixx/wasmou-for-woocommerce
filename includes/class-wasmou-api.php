@@ -2,7 +2,7 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Client for the Wasmou public API (https://gateway.wasmou.net).
+ * Client for the Wasmou public API (https://api.wasmou.net/api).
  * Every call returns array( 'ok' => bool, 'kind' => ok|rejected|retry|uncertain|config, 'http' => int, 'message' => string, 'data' => mixed ).
  *  - rejected : Wasmou refused it (nothing was bought).
  *  - retry    : rate limited, nothing was bought, try again later.
@@ -45,6 +45,15 @@ class Wasmou_WC_API {
 		}
 		$code = (int) wp_remote_retrieve_response_code( $res );
 		$json = json_decode( wp_remote_retrieve_body( $res ), true );
+		// International accounts are billed in USD: every answer says so, and every price in it is in USD.
+		$cur = is_array( $json ) ? ( $json['currency'] ?? ( is_array( $json['data'] ?? null ) ? ( $json['data']['currency'] ?? null ) : null ) ) : null;
+		if ( $code >= 200 && $code < 300 && is_array( $json ) ) {
+			if ( is_string( $cur ) ) {
+				Wasmou_WC_Settings::set_account_currency( $cur );
+			} elseif ( '/balance' === $path || 0 === strpos( $path, '/catalog' ) ) {
+				Wasmou_WC_Settings::set_account_currency( 'DZD' ); // local accounts carry no currency field: back to dinar.
+			}
+		}
 		$msg  = is_array( $json ) && isset( $json['message'] ) && is_string( $json['message'] ) ? $json['message'] : 'HTTP ' . $code;
 
 		if ( 429 === $code ) {
@@ -94,10 +103,14 @@ class Wasmou_WC_API {
 	/**
 	 * Buy $quantity units of a variant. $inputs = buyer fields by index. The idempotency key makes retries safe.
 	 */
-	public static function purchase( $variant_id, $quantity, array $inputs, $idempotency_key ) {
+	public static function purchase( $variant_id, $quantity, array $inputs, $idempotency_key, $reference = '' ) {
 		$body = array( 'quantity' => max( 1, (int) $quantity ) );
 		foreach ( $inputs as $i => $v ) {
 			$body[ (string) $i ] = (string) $v;
+		}
+		// Your own order number: it comes back on the order, in lookups and in every webhook.
+		if ( '' !== (string) $reference ) {
+			$body['reference'] = substr( (string) $reference, 0, 128 );
 		}
 
 		return self::request( 'POST', '/products/purchase/' . (int) $variant_id, $body, array( 'Idempotency-Key' => $idempotency_key ), 60 );
@@ -121,6 +134,30 @@ class Wasmou_WC_API {
 		}
 
 		return $r;
+	}
+
+	/** The webhook configured on the account (one per account), or null. */
+	public static function webhook() {
+		$r = self::request( 'GET', '/webhook', null, array(), 20 );
+
+		return $r;
+	}
+
+	/** Creates the webhook. The answer carries the signing secret once. */
+	public static function webhook_set( $url, array $events ) {
+		return self::request( 'PUT', '/webhook', array( 'url' => $url, 'events' => array_values( $events ) ), array(), 25 );
+	}
+
+	public static function webhook_new_secret() {
+		return self::request( 'POST', '/webhook/secret', array(), array(), 20 );
+	}
+
+	public static function webhook_remove() {
+		return self::request( 'DELETE', '/webhook', null, array(), 20 );
+	}
+
+	public static function webhook_test() {
+		return self::request( 'POST', '/webhook/test', array(), array(), 25 );
 	}
 
 	/** Normalises Wasmou order statuses: delivered | failed | pending. */
